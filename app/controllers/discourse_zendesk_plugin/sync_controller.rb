@@ -30,7 +30,7 @@ module DiscourseZendeskPlugin
         unless existing_comment.present?
           post = topic.posts.create!(
             user: user,
-            raw: build_raw_post_body(comment)
+            raw: build_raw_post_body(latest_comment)
           )
           update_post_custom_fields(post, latest_comment)
         end
